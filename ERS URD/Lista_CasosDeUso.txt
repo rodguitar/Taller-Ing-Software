@@ -1,0 +1,41 @@
+apoderado
+admin
+casos de uso:
+inicar sesion
+cerrar sesion
+
+ingresa apoderado(admin)
+eliminar apoderado
+modificar apoderado
+
+ingresar anotacion
+modificar anotacion
+eliminar anotacion
+
+ingresar curso
+modificar curso
+eliminar curso
+
+ingresar evaluacion
+modificar evaluacion
+eliminar evaluacion
+
+ingresar asigntura
+modificar asignatura
+eliminar asignatura
+
+ingresar comunicacion
+modificar comunicacion
+eliminar comunicacion
+
+ingresar alumno 
+modificar alumno
+eliminar alumno
+
+ver evaluaciones (apoderado)
+ver comunicaciones
+ver anotaciones
+inicar sesion
+cerrar sesion
+
+
