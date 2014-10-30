@@ -1,0 +1,6 @@
+diagrama de colaboracion
+diagrama de clases
+diagrama de componentes
+diagrama de despliegue
+
+Avance en la aplicación proxima semana( martes 5:30)
