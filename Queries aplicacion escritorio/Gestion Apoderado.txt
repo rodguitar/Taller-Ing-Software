@@ -1,0 +1,6 @@
+Clase GestionApoderado:
+
+- QObtieneApoderados(): funcion que realiza Query para obtener todos los apoderados.
+- QIngresaApoderado(): procedimiento que realiza Query para ingresar un apoderado.
+- QModificaApoderado(): procedimiento que realiza Query para Modificar un apoderado.
+- QEliminaApoderado(): procedimiento que realiza Query para Eliminar un apoderado.

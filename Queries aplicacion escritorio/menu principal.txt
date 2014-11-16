@@ -1,0 +1,2 @@
+Clase MenuPrincipal:
+- QValidaUsuario(): funcion que realiza Query de usuarios a la BD y valida usuario

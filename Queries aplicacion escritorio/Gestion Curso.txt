@@ -1,0 +1,5 @@
+clase GestionCurso:
+- QObtieneCursos(): funcion que realiza Query para obtener todos los Cursos.
+- QIngresaCurso(): procedimiento que realiza Query para ingresar un Curso.
+- QModificaCurso(): procedimiento que realiza Query para Modificar un Curso.
+- QEliminaCurso(): procedimiento que realiza Query para Eliminar un Curso.

@@ -1,0 +1,9 @@
+Clase GestionAnotacion:
+
+- QObtieneCursos(): funcion que realiza Query para obtener todos los Cursos.
+- QObtieneAsignaturas(): funcion que realiza Query para obtener todos las asignaturas de un Curso.
+- QObtieneAlumnos(): funcion que realiza Query para obtener todos los alumnos de un Curso.
+- QObtieneAnotaciones(): funcion que realiza Query para obtener todos las anotaciones de un Alumno.
+- QIngresaAnotacion(): procedimiento que realiza Query para ingresar una Anotacion de un Alumno.
+- QModificaAnotacion(): procedimiento que realiza Query para Modificar una Anotacion de un Alumno.
+- QEliminaAnotacion(): procedimiento que realiza Query para Eliminar una Anotacion de un Alumno.

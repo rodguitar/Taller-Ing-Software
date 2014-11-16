@@ -1,0 +1,7 @@
+Clase GestionAsignatura:
+
+- QObtieneCursos(): funcion que realiza Query para obtener todos los Cursos.
+- QObtieneAsignaturas(): funcion que realiza Query para obtener todos las asignaturas de un Curso.
+- QIngresaAsignatura(): procedimiento que realiza Query para ingresar una asignatura.
+- QModificaAsignatura(): procedimiento que realiza Query para Modificar una asignatura.
+- QEliminaAsignatura(): procedimiento que realiza Query para Eliminar una asignatura.

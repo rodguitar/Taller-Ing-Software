@@ -1,0 +1,8 @@
+Clase GestionAlumno:
+
+- QObtieneCursos(): funcion que realiza Query para obtener todos los Cursos.
+- QObtieneAlumnos(): funcion que realiza Query para obtener todos los alumnos de un Curso.
+- QObtieneApoderados(): funcion que realiza Query para obtener todos los apoderados.
+- QIngresaAlumno(): procedimiento que realiza Query para ingresar un Alumno.
+- QModificaAlumno(): procedimiento que realiza Query para Modificar un Alumno.
+- QEliminaAlumno(): procedimiento que realiza Query para Eliminar un Alumno.

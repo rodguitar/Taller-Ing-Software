@@ -1,0 +1,6 @@
+Clase GestionComunicacion:
+
+- QObtieneCursos(): funcion que realiza Query para obtener todos los Cursos.
+- QObtieneAlumnos(): funcion que realiza Query para obtener todos los alumnos de un Curso.
+
+- QIngresaComunicacion(): procedimiento que realiza Query para ingresar una Comunicacion a un Alumno.

@@ -1,0 +1,8 @@
+Clase GestionEvaluacion:
+
+- QObtieneCursos(): funcion que realiza Query para obtener todos los Cursos.
+- QObtieneAsignaturas(): funcion que realiza Query para obtener todos las asignaturas de un Curso.
+
+- QIngresaEvaluacion(): procedimiento que realiza Query para ingresar una Evaluacion.
+- QModificaEvaluacion(): procedimiento que realiza Query para Modificar una Evaluacion.
+- QEliminaEvaluacion(): procedimiento que realiza Query para Eliminar una Evaluacion.
