@@ -14,7 +14,7 @@ Public Class GestionAlumno
         QObtieneCursos()
     End Sub
 
-    'Query para seleccionar los Cursos
+    'Query para Obtener los Cursos
     Private Sub QObtieneCursos()
         Try
 

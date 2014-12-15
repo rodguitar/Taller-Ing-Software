@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Imports System.Data
+Imports System.Globalization
 
 Public Class MenuPrincipal
     Dim conex As New MySqlConnection("data source=tallerdb2014.db.8912402.hostedresource.com; user id=tallerdb2014; password=S1emens@; database=tallerdb2014")
@@ -44,6 +45,7 @@ Public Class MenuPrincipal
                 Button6.Enabled = True
                 Button7.Enabled = True
                 Button8.Enabled = True
+                PictureBox1.Enabled = True
             Else
                 If QValidaUsuario(rutAdmin.Text.Trim, claveAdmin.Text.Trim, "3") Then
                     MessageBox.Show("Bienvenido, has ingresado al Sistema", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
@@ -119,6 +121,7 @@ Public Class MenuPrincipal
         Button6.Enabled = False
         Button7.Enabled = False
         Button8.Enabled = False
+        PictureBox1.Enabled = False
         'se limpian los campos de datos de usuario de la pantalla principal
         LabelRUT.ResetText()
         LabelNOMBRE.ResetText()
@@ -142,15 +145,21 @@ Public Class MenuPrincipal
 
     'BORRAR ESTE METODO DESPUES AL FINALIZAR LAS PRUEBAS!!!!!!!!!!!!!!!!!!!!!!!!!!
     Private Sub MenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'EJECUTCIONES DE PRUEBA QUE HAY QUE BORRAR
-        Button1.Enabled = True
-        Button2.Enabled = True
-        Button3.Enabled = True
-        Button4.Enabled = True
-        Button5.Enabled = True
-        Button6.Enabled = True
-        Button7.Enabled = True
-        Button8.Enabled = True
+
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("es-CO")
+        System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyDecimalSeparator = "."
+        System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyGroupSeparator = ","
+        System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator = "."
+        System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator = ","
+        'EJECUCIONES DE PRUEBA QUE HAY QUE BORRAR
+        'Button1.Enabled = True
+        'Button2.Enabled = True
+        'Button3.Enabled = True
+        'Button4.Enabled = True
+        'Button5.Enabled = True
+        'Button6.Enabled = True
+        'Button7.Enabled = True
+        'Button8.Enabled = True
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -175,5 +184,81 @@ Public Class MenuPrincipal
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         GestionEvaluacion.Show()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        GestionAdministrador.Show()
+    End Sub
+
+    Private Sub claveAdmin_KeyPress(sender As Object, e As KeyPressEventArgs) Handles claveAdmin.KeyPress
+        If e.KeyChar = Chr(13) Then
+
+            If rutAdmin.Text = "" Then
+                MessageBox.Show("Ingrese Administrador", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                rutAdmin.Focus()
+            ElseIf claveAdmin.Text = "" Then
+                MessageBox.Show("Ingrese Contraseña", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                claveAdmin.Focus()
+            Else
+                If QValidaUsuario(rutAdmin.Text.Trim, claveAdmin.Text.Trim, "1") Then
+                    MessageBox.Show("Bienvenido, has ingresado al Sistema", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                    GroupBox2.Enabled = False
+
+                    'se limpian los campos de acceso
+                    rutAdmin.Clear()
+                    claveAdmin.Clear()
+
+                    'Se rellenan los datos del adminstrador en la pantalla
+                    Dim usuarios As DataSet = New DataSet
+                    da.Fill(usuarios, "Usuarios")
+
+                    LabelRUT.Text = usuarios.Tables(0).Rows(0)(0).ToString
+                    LabelNOMBRE.Text = usuarios.Tables(0).Rows(0)(1).ToString
+
+                    'Se habilitan los botones de gestiones
+                    Button1.Enabled = True
+                    Button2.Enabled = True
+                    Button3.Enabled = True
+                    Button4.Enabled = True
+                    Button5.Enabled = True
+                    Button6.Enabled = True
+                    Button7.Enabled = True
+                    Button8.Enabled = True
+                    PictureBox1.Enabled = True
+                Else
+                    If QValidaUsuario(rutAdmin.Text.Trim, claveAdmin.Text.Trim, "3") Then
+                        MessageBox.Show("Bienvenido, has ingresado al Sistema", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                        GroupBox2.Enabled = False
+
+                        'se limpian los campos de acceso
+                        rutAdmin.Clear()
+                        claveAdmin.Clear()
+
+                        'Se rellenan los datos del adminstrador en la pantalla
+                        Dim usuarios As DataSet = New DataSet
+                        da.Fill(usuarios, "Usuarios")
+
+                        LabelRUT.Text = usuarios.Tables(0).Rows(0)(0).ToString
+                        LabelNOMBRE.Text = usuarios.Tables(0).Rows(0)(1).ToString
+
+
+                        'Se habilitan los botones de gestiones
+                        Button1.Enabled = True
+                        Button2.Enabled = True
+                        Button3.Enabled = True
+                        Button4.Enabled = True
+                        Button5.Enabled = True
+                        Button6.Enabled = True
+                        Button7.Enabled = True
+                        Button8.Enabled = True
+                    Else
+                        MessageBox.Show("Usuario y/o contraseña Incorrectos", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                    End If
+                End If
+            End If
+
+
+        End If
     End Sub
 End Class
